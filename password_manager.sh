@@ -9,7 +9,7 @@ while true
 do
   echo "次の選択肢から入力してください(Add Password/Get Password/Exit)："
   read input
-  if [ ${input} = "Add" ]; then
+  if [ "${input}" = "Add Password" ]; then
     echo -n "サービス名を入力してください："
     read service_name
     echo -n "ユーザー名を入力してください："
@@ -20,11 +20,11 @@ do
     password_info="${service_name}:${user_name}:${password}"
     echo $password_info >> password_info.txt
     echo "パスワードの追加は成功しました。"
-  elif [ ${input} = "Get" ]; then
+  elif [ "${input}" = "Get Password" ]; then
     echo -n "サービス名を入力してください："
     read input
     result=$(grep  $input password_info.txt)
-    if [ -n ${result} ] ; then
+    if [ -n "${result}" ] ; then
       results=(${result//:/ })
       echo "サービス名: ${results[SERVICE_NAME]}"
       echo "ユーザー名: ${results[USER_NAME]}"
@@ -32,7 +32,7 @@ do
     else
       echo "そのサービスは登録されていません。"
     fi
-  elif [ ${input} = "Exit" ]; then
+  elif [ "${input}" = "Exit" ]; then
     echo -n "Thank you"
     printf '\033[31m%s\033[m\n' '!'
     exit
