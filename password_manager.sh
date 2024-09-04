@@ -30,9 +30,13 @@ do
       echo "ユーザー名: ${results[USER_NAME]}"
       echo "パスワード: ${results[PASSWORD]}"
     else
-      echo "ちゃんと入力せい"
+      echo "そのサービスは登録されていません。"
     fi
   elif [ ${input} = "Exit" ]; then
+    echo -n "Thank you"
+    printf '\033[31m%s\033[m\n' '!'
     exit
+  else
+    echo "入力が間違えています。Add Password/Get Password/Exit から入力してください。"
   fi
 done
