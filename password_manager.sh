@@ -41,11 +41,10 @@ do
     echo "パスワードの追加は成功しました。"
   elif [ "${input}" = "Get Password" ]; then
     if [ -e password_info.txt.gpg ]; then
-      gpg -d password_info.txt.gpg > password_info.txt
-
       echo -n "サービス名を入力してください："
       read input
 
+      gpg -d password_info.txt.gpg > password_info.txt
       result=$(grep  $input password_info.txt)
 
       rm password_info.txt
