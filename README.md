@@ -10,11 +10,11 @@ GnuPGのインストールをし、公開鍵の設定を行なってください
 
 # ダウンロード
 パスワードマネージャーをクローンしたいディレクトリへ移動し、以下のコマンドを実行しクローンと実行権限の付与を行なってください。  
-`https://github.com/IKei105/QUEST.git`
+```https://github.com/IKei105/QUEST.git```
 
 # 利用方法
 パスワードマネージャーに対して実行権限の付与を行なってください。  
-`git chmod +x password_manager.sh`
+```git chmod +x password_manager.sh```
 
 ## 公開鍵の入力
 パスワードマネージャーの起動後、GnuPGで設定したメールアドレスを入力してください  
